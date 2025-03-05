@@ -4,21 +4,33 @@ import data from '../../public/data.json';
 import '../../assets/scss/astro-ecommerce.scss';
 import Navbar from '../components/navbar';
 import UpperNavbar from '../components/store/upperNavbar';
-import CardProduct from '../components/products/cardProduct';
+import OrderHistory from '../components/order/OrderHistory';
 import ShoppingCart from '../components/cart/shoppingCart';
 import StoreDoubleColumn from '../components/store/storeDoubleColumn';
+
 
 let cartItems = [];
 data.shoppingCart.map(id => 
   data.products.filter(x => x.id == id).map(x => cartItems.push(x))
 )
+
+let orderHistoryProducts = new Set();
+data.orders.forEach((order) => {
+  order.products.forEach(productDetails => {
+    data.products.forEach(product => {
+      if (product.id == productDetails.id) {
+        orderHistoryProducts.add(product);
+      }
+    });
+  })
+})
 ---
 
-<Layout title="Shopping Cart">
+<Layout title="Order History">
 	<main>
     <Navbar />
 
-    <ShoppingCart products = {cartItems}/>
+    <OrderHistory orders = {data.orders} products={orderHistoryProducts} />
     {/*
     <div class="container mt-5">
       <div class="row">

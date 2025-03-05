@@ -7,6 +7,7 @@ import UpperNavbar from '../components/store/upperNavbar';
 import CardProduct from '../components/products/cardProduct';
 import ShoppingCart from '../components/cart/shoppingCart';
 import StoreDoubleColumn from '../components/store/storeDoubleColumn';
+import CategoryFilters from '../components/products/categoryFilters';
 
 let cartItems = [];
 data.shoppingCart.map(id => 
@@ -14,11 +15,15 @@ data.shoppingCart.map(id =>
 )
 ---
 
-<Layout title="Shopping Cart">
+<Layout title="Product">
 	<main>
     <Navbar />
 
-    <ShoppingCart products = {cartItems}/>
+    <div class="mt-5">            
+        <CategoryFilters 
+          //title=""
+        />
+      </div>
     {/*
     <div class="container mt-5">
       <div class="row">
