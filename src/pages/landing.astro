@@ -10,6 +10,24 @@ import TestimonialsFade from '../components/promo/testimonialsFade';
 import PromoSectionLarge from '../components/promo/promoSectionLarge';
 
 const categories = [{"GroupCOde":1,"GroupName":"ALMOND","ImageURL":"https://www.acinuts.com/intime_images/ACI_2.jpeg"},{"GroupCOde":24,"GroupName":"Amla ","ImageURL":"http://213.210.21.17:3000/ACINUTS/ORDERMGMT/api/uploads/image-1740227108054.jpg"},{"GroupCOde":8,"GroupName":"Berries","ImageURL":"https://www.acinuts.com/intime_images/ACI_35.jpeg"},{"GroupCOde":11,"GroupName":"CANDY","ImageURL":"https://www.acinuts.com/intime_images/ACI_109.jpeg"},{"GroupCOde":2,"GroupName":"CASHEWS","ImageURL":"https://www.acinuts.com/intime_images/ACI_3.jpeg"},{"GroupCOde":5,"GroupName":"DATES","ImageURL":"https://www.acinuts.com/intime_images/ACI_20.jpeg"},{"GroupCOde":15,"GroupName":"Dry Fruits","ImageURL":"https://www.acinuts.com/intime_images/ACI_63.jpeg"},{"GroupCOde":4,"GroupName":"FIG","ImageURL":"https://www.acinuts.com/intime_images/ACI_13.jpeg"},{"GroupCOde":20,"GroupName":"Healthy Breakfast ","ImageURL":"http://213.210.21.17:3000/ACINUTS/ORDERMGMT/api/InvoiceUpload/image-1740288999802.jpg"},{"GroupCOde":17,"GroupName":"Honey","ImageURL":"http://213.210.21.17:3000/ACINUTS/ORDERMGMT/api/uploads/image-1740117737122.jpg"},{"GroupCOde":16,"GroupName":"Milets","ImageURL":"https://acinuts.com/intime_images/ACI_131.jpeg"},{"GroupCOde":6,"GroupName":"NUTS ","ImageURL":"https://www.acinuts.com/intime_images/ACI_49.jpeg"},{"GroupCOde":18,"GroupName":"Oil","ImageURL":"http://213.210.21.17:3000/ACINUTS/ORDERMGMT/api/uploads/image-1740120784563.jpg"},{"GroupCOde":9,"GroupName":"Others","ImageURL":"https://www.acinuts.com/intime_images/ACI_23.jpeg"},{"GroupCOde":10,"GroupName":"PALM & CANE","ImageURL":"https://www.acinuts.com/intime_images/ACI_94.jpeg"},{"GroupCOde":3,"GroupName":"PISTA","ImageURL":"https://www.acinuts.com/intime_images/ACI_11.jpeg"},{"GroupCOde":23,"GroupName":"Pulses ","ImageURL":"http://213.210.21.17:3000/ACINUTS/ORDERMGMT/api/uploads/image-1740226340114.jpg"},{"GroupCOde":14,"GroupName":"RAISINS","ImageURL":"https://www.acinuts.com/intime_images/ACI_56.jpeg"},{"GroupCOde":21,"GroupName":"Saffron ","ImageURL":"http://213.210.21.17:3000/ACINUTS/ORDERMGMT/api/uploads/image-1740124258232.jpg"},{"GroupCOde":7,"GroupName":"SEEDS","ImageURL":"https://www.acinuts.com/intime_images/ACI_24.jpeg"},{"GroupCOde":19,"GroupName":"Sharbath & Essence ","ImageURL":"http://213.210.21.17:3000/ACINUTS/ORDERMGMT/api/uploads/image-1740120897108.jpg"},{"GroupCOde":12,"GroupName":"Spices","ImageURL":"https://www.acinuts.com/intime_images/ACI_41.jpeg"},{"GroupCOde":22,"GroupName":"Sweet Refreshner","ImageURL":"http://213.210.21.17:3000/ACINUTS/ORDERMGMT/api/uploads/image-1740125224888.jpg"},{"GroupCOde":13,"GroupName":"WALNUT","ImageURL":"https://www.acinuts.com/intime_images/ACI_90.jpeg"}]
+const images_new =  [
+        {
+          "src": "https://www.acinuts.com/intime_images/ACI_1.jpeg",
+          "alt": "first_image"
+        },
+        {
+          "src": "https://www.acinuts.com/intime_images/ACI_1.jpeg",
+          "alt": "second_image"
+        },
+        {
+          "src": "https://www.acinuts.com/intime_images/ACI_49.jpeg",
+          "alt": "third_image"
+        },
+        {
+          "src": "https://www.acinuts.com/intime_images/ACI_3.jpeg",
+          "alt": "fourth_image"
+        }
+      ]
 ---
 
 <Layout title="Landing Page">
@@ -41,8 +59,8 @@ const categories = [{"GroupCOde":1,"GroupName":"ALMOND","ImageURL":"https://www.
       </div>
 
     <PromoSectionLarge 
-      title="Basic Starter Pack"
-      full_description={data.products[0].full_description} 
+      title="Dry Fruits"
+      full_description={'Crunch into health, taste the purity! Handpicked premium nuts, straight from nature.'} 
       pageHeaderBgImg={"../images/bg2.jpg"} 
       pageHeaderMinVh="50vh"
       pageHeaderRadius="1rem"
@@ -50,8 +68,8 @@ const categories = [{"GroupCOde":1,"GroupName":"ALMOND","ImageURL":"https://www.
     <div class="my-5">
       <ProductFeature
         title="Product Features"
-        images={data.products[2].images}
-        full_description="Society has put up so many boundaries, so many limitations on what’s right and wrong that it’s almost impossible"
+        images={images_new}
+        full_description="Why limit yourself? Break free from ordinary snacking! Discover the finest, crunchiest, and healthiest nuts—because great taste knows no boundaries!"
         featuresDetails={data.products[0].featuresDetails}
       />
     </div>

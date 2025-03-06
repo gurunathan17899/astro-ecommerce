@@ -17,7 +17,8 @@ export default function ProductOverview({
   full_description,
   featuresDetails,
 }: Props) {
-
+  
+console.log(images)
   return (
     <>
     <div className="card card-product card-plain">
@@ -35,7 +36,12 @@ export default function ProductOverview({
         <div className="col-12 col-lg-6 pe-5">
           <div className="row">
             <h4 className="mb-3">Product Description</h4>
-            <p className="mb-5">Society has put up so many boundaries, so many limitations on what’s right and wrong that it’s almost impossible to get a pure thought out. It’s like a little kid, a little boy, looking at colors, and no one told him what colors are good, before somebody tells you you shouldn’t like pink because that’s for girls, or you’d instantly become a gay two-year-old.</p>
+            <p className="mb-5">`🌰 Premium Quality: Handpicked, farm-fresh nuts with the finest taste and crunch.
+        💪 Packed with Nutrition: Rich in protein, fiber, and healthy fats for a power-packed snack.
+        🛡️ 100% Natural & Fresh: No additives, no preservatives—just pure goodness in every bite.
+        🚀 Fast & Secure Delivery: Freshly packed and delivered straight to your doorstep.
+        🎁 Perfect for All Occasions: Ideal for daily snacking, gifting, and festive treats.
+        🌿 Sustainable & Ethically Sourced: Supporting farmers and ensuring eco-friendly packaging.`</p>
             <ProductFeatureDetails featuresDetails={featuresDetails} />
           </div>
         </div>

@@ -13,7 +13,7 @@ export default function Footer() {
                 className="text-dark ms-1"
                 target="_blank"
               >
-                Creative Tim
+                OMGTechMinds
               </a>
               .
             </div>
@@ -22,40 +22,23 @@ export default function Footer() {
             <ul className="nav nav-footer justify-content-center justify-content-lg-end">
               <li className="nav-item">
                 <a
-                  href="https://www.creative-tim.com"
+                  href="https://www.omgtechminds.com"
                   className="nav-link text-sm text-muted"
                   target="_blank"
                 >
-                  Creative Tim
+                  OMGTechMinds
                 </a>
               </li>
               <li className="nav-item">
                 <a
-                  href="https://www.creative-tim.com/presentation"
+                  href="https://www.omgtechmins.com"
                   className="nav-link text-sm text-muted"
                   target="_blank"
                 >
                   About Us
                 </a>
               </li>
-              <li className="nav-item">
-                <a
-                  href="https://www.creative-tim.com/blog"
-                  className="nav-link text-sm text-muted"
-                  target="_blank"
-                >
-                  Blog
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  href="https://www.creative-tim.com/license"
-                  className="nav-link text-sm pe-0 text-muted"
-                  target="_blank"
-                >
-                  License
-                </a>
-              </li>
+            
             </ul>
           </div>
         </div>

@@ -20,7 +20,7 @@ export default function ComplexFooter() {
                 document.write(new Date().getFullYear())
               </script>
               &nbsp;ACINUTS by &nbsp;
-              <a href="https://www.creative-tim.com" className="text-dark" target="_blank">Creative Tim</a>.
+              <a href="https://www.omgtechminds.com" className="text-dark" target="_blank">OMGTechMinds</a>.
             </div>
           </div>
         </div>

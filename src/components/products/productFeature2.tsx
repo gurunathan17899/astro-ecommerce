@@ -129,7 +129,7 @@ export default function ProductOverview({
               <div className="row mt-5">
                 <div className="col-12 col-lg-6 mb-lg-0 mb-4">
                   <h5 className="mt-5 mb-4">Instructions</h5>
-                  <p>We’re not always in the position that we want to be at. We’re constantly growing. We’re constantly making mistakes. We’re constantly trying to express ourselves and actualize our dreams.
+                  <p>I ordered almonds and cashews, and the quality was amazing! Super fresh, crunchy, and packed perfectly. Will definitely be ordering again
                     <br/>
                     If you have the opportunity to play this game of life you need to appreciate every moment. A lot of people don’t appreciate the moment until it’s passed.
                   </p>
