@@ -12,13 +12,52 @@ let cartItems = [];
 data.shoppingCart.map(id => 
   data.products.filter(x => x.id == id).map(x => cartItems.push(x))
 )
+
+ const cartList = {
+    "issuccess": true,
+    "data": 1,
+    "Items": [
+        {
+            "itemcode": 1,
+            "itemname": "Almond Basic",
+            "imageurl": "https://www.acinuts.com/intime_images/ACI_2.jpeg",
+            "qty": 2,
+            "selectedCategory": "100 gm",
+            "price": "100.00"
+        },
+        {
+            "itemcode": 1,
+            "itemname": "Almond Basic",
+            "imageurl": "https://www.acinuts.com/intime_images/ACI_2.jpeg",
+            "qty": 1,
+            "selectedCategory": "1 kg",
+            "price": "900.00"
+        },
+        {
+            "itemcode": 45,
+            "itemname": "Amla Dry - Sweet",
+            "imageurl": "https://www.omgtechminds.com/ACINUTS/ACI_22.jpeg",
+            "qty": 1,
+            "selectedCategory": "100 gm",
+            "price": "50.00"
+        }
+    ],
+    "userdetail": {
+        "referredBy": 0,
+        "Referral_Offer_Applicable": false,
+        "refer_table_update": false,
+        "Discount_Amount": 0,
+        "is_first_order": false
+    }
+}
+
 ---
 
 <Layout title="Shopping Cart">
 	<main>
     <Navbar />
 
-    <ShoppingCart products = {cartItems}/>
+    <ShoppingCart products = {cartList.Items}/>
     {/*
     <div class="container mt-5">
       <div class="row">

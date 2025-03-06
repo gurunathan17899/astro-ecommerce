@@ -3,8 +3,11 @@ import OrderSummary from './orderSummary';
 
 interface Props {
   products: ({
-    thumb_src: string;
+    imageurl: string;
     thumb_alt: string;
+    itemname: string;
+    selectedCategory: string;
+    qty: number;
     color: string;
     title: string;
     price: number;
@@ -38,13 +41,12 @@ export default function ShoppingCart({
                 <hr className="horizontal dark my-4" />  
               }
                 <ProductCartItem
-                  thumb_src={product.thumb_src}
-                  thumb_alt={product.thumb_alt}
-                  title={product.title}
-                  color={product.color}
-                  size={product.size}
-                  price={product.price}
-                  stock={product.stock}
+                  thumb_src={product.imageurl}
+                  thumb_alt={product.imageurl}
+                  title={product.itemname}                  
+                  price={product.price}                  
+                  UOM={product.selectedCategory}
+                  Qty={product.qty}
                 />
               </>
             )}
