@@ -53,9 +53,8 @@ export default function ProductOverview({ title,items,category }: Props) {
           <div key={product.title} className="col-12 col-md-6 col-lg-2 mb-4">
             <CardProduct
               thumb_src={product?.imageurl}
-              thumb_alt={product.imageurl}
-              color={product.color}
-              colors={product.colors}
+              thumb_alt={product.imageurl}              
+              categories={product.rate}
               title={product.itemname}
               description={product.description}
               price={product.price}

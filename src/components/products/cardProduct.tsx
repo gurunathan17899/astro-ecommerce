@@ -1,63 +1,104 @@
-import ProductBadge from './productBadge';
+import CartQuickview from './CartQuickView';
+
+interface Category {
+  price: number;
+  CategoryCode: number;
+  CategoryName: string;
+}
 
 interface Props {
   thumb_src: string;
   thumb_alt: string;
   title: string;
   description: string;
-  price: number;
-  color: string;
-  colors: string[];
+  price: number;    
   position: string;
+  categories: Category[];
 }
+
+
 
 export default function CardProduct({
   thumb_src,
   thumb_alt,
   title,
   description,
-  price,
-  color,
-  colors,
-  position
+  price,    
+  position,
+  categories
 }: Props) {
 
   const classList = "card-body " + "text-" + position;
+  console.log(title)
 
   return (
     <>
       <div className="card card-product border mb-5 shadow-xs border-radius-lg">
         <a href="#">
           <div className="height-250">
-            <img className="w-100 h-70 p-4 rounded-top" src={`${thumb_src}`} alt={thumb_alt} />
+            <img
+              className="w-100 h-70 p-4 rounded-top"
+              src={`${thumb_src}`}
+              alt={thumb_alt}
+            />
           </div>
           <div className={classList}>
-            {(color) && 
-              <h6 className="text-md mb-1 text-body">{color}</h6>
-            }
-            {(title) && 
-              <h4 className="font-weight-bold">
-                {title}
-              </h4>
-            }
+            {title && <h4 className="font-weight-bold">{title}</h4>}
 
-            {(description) && 
-              <p className="text-body">{description}</p>
-            }
-           
-            {(colors) &&
-              <ProductBadge colors={colors} />
-            }
-            
-            {(price) && 
+            {description && <p className="text-body">{description}</p>}
+
+            {categories && categories.length > 0 && (
+              <div
+                className="d-flex flex-wrap gap-1"
+                style={{
+                  justifyContent: "center",
+                  display: "flex",
+                  marginTop: "8px",
+                  marginBottom: "8px",
+                }}
+              >
+                {categories.map((category, index) => (
+                  <div
+                    key={index}
+                    className="badge badge-primary px-4 py-4 d-flex flex-row align-items-center border rounded shadow-sm bg-light text-dark"
+                    style={{
+                      minWidth: "80px",
+                      textAlign: "center",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 1,
+                    }}
+                  >
+                    <span
+                      className="font-weight-bold"
+                      style={{ fontSize: "10px" }}
+                    >
+                      {category.CategoryName}:
+                    </span>
+                    <span className="text-muted" style={{ fontSize: "10px" }}>
+                      ₹{category.price.toLocaleString()}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {price && (
               <h4 className="mb-0 text-lg mt-1 mb-3">
                 ${price.toLocaleString()}
               </h4>
-            }
+            )}
+         
+         <div style={{marginTop:'16px'}}>
+            <CartQuickview
+              colors={[]}
+              thumb_src={thumb_src}
+              title={title}              
+              rating={4}
+              reviews={2}
+            />
+            </div>
 
-            {!(description || colors || color) &&
-              <a href="#" className="font-weight-normal text-body text-sm">Shop Now</a>
-            }
           </div>
         </a>
       </div>
