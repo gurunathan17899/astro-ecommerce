@@ -8,12 +8,123 @@ import CardProduct from '../components/products/cardProduct';
 import ShoppingCart from '../components/cart/shoppingCart';
 import StoreDoubleColumn from '../components/store/storeDoubleColumn';
 import CategoryFilters from '../components/products/categoryFilters';
+import { GetProductList } from '../Network/API';
 
-let cartItems = [];
-data.shoppingCart.map(id => 
-  data.products.filter(x => x.id == id).map(x => cartItems.push(x))
-)
+const product_categories = await GetProductList();
+console.log(product_categories)
+const itemlist = [
+            {
+                "itemcode": 1,
+                "itemname": "Almond Basic",
+                "imageurl": "https://www.acinuts.com/intime_images/ACI_2.jpeg",
+                "rate": [
+                    {
+                        "price": 100,
+                        "CategoryCode": 1,
+                        "CategoryName": "100 gm"
+                    },
+                    {
+                        "price": 225,
+                        "CategoryCode": 2,
+                        "CategoryName": "250 gm"
+                    },
+                    {
+                        "price": 450,
+                        "CategoryCode": 3,
+                        "CategoryName": "500 gm"
+                    },
+                    {
+                        "price": 900,
+                        "CategoryCode": 4,
+                        "CategoryName": "1 kg"
+                    }
+                ]
+            },
+            {
+                "itemcode": 2,
+                "itemname": "Almond Mini Bold",
+                "imageurl": "https://www.acinuts.com/intime_images/ACI_3.jpeg",
+                "rate": [
+                    {
+                        "price": 110,
+                        "CategoryCode": 1,
+                        "CategoryName": "100 gm"
+                    },
+                    {
+                        "price": 240,
+                        "CategoryCode": 2,
+                        "CategoryName": "250 gm"
+                    },
+                    {
+                        "price": 480,
+                        "CategoryCode": 3,
+                        "CategoryName": "500 gm"
+                    },
+                    {
+                        "price": 960,
+                        "CategoryCode": 4,
+                        "CategoryName": "1 kg"
+                    }
+                ]
+            },
+            {
+                "itemcode": 3,
+                "itemname": "Almond Premium / Bold",
+                "imageurl": "https://www.acinuts.com/intime_images/ACI_2.jpeg",
+                "rate": [
+                    {
+                        "price": 132,
+                        "CategoryCode": 1,
+                        "CategoryName": "100 gm"
+                    },
+                    {
+                        "price": 275,
+                        "CategoryCode": 2,
+                        "CategoryName": "250 gm"
+                    },
+                    {
+                        "price": 550,
+                        "CategoryCode": 3,
+                        "CategoryName": "500 gm"
+                    },
+                    {
+                        "price": 1100,
+                        "CategoryCode": 4,
+                        "CategoryName": "1 kg"
+                    }
+                ]
+            },
+            {
+                "itemcode": 4,
+                "itemname": "Almond Mamra Premium",
+                "imageurl": "https://www.acinuts.com/intime_images/ACI_2.jpeg",
+                "rate": [
+                    {
+                        "price": 480,
+                        "CategoryCode": 1,
+                        "CategoryName": "100 gm"
+                    },
+                    {
+                        "price": 1000,
+                        "CategoryCode": 2,
+                        "CategoryName": "250 gm"
+                    },
+                    {
+                        "price": 2000,
+                        "CategoryCode": 3,
+                        "CategoryName": "500 gm"
+                    },
+                    {
+                        "price": 4000,
+                        "CategoryCode": 4,
+                        "CategoryName": "1 kg"
+                    }
+                ]
+            },           
+        ]
+
 ---
+
 
 <Layout title="Product">
 	<main>
@@ -21,25 +132,28 @@ data.shoppingCart.map(id =>
 
     <div class="mt-5">            
         <CategoryFilters 
-          //title=""
+          category={product_categories}
+          title="Almond"
+          items = {itemlist}
         />
       </div>
     {/*
     <div class="container mt-5">
-      <div class="row">
-        <h5 class="mb-4">You may also like...</h5>
-        {data.products.map(product => 
-          <div class="col-md-6 col-lg-3">
-            <CardProduct 
-              thumb_src = {product.thumb_src}
-              thumb_alt = {product.thumb_alt}
-              color = {product.color}
-              title = {product.title}
-              price = {product.price}
-              position = "left"
+      <div className="row" style={{}}>
+        {data.products.map((product) => (
+          <div key={product.title} className="col-12 col-md-6 col-lg-4 mb-4">
+            <CardProduct
+              thumb_src={product.thumb_src}
+              thumb_alt={product.thumb_alt}
+              color={product.color}
+              colors={product.colors}
+              title={product.title}
+              description={product.description}
+              price={product.price}
+              position="center"
             />
           </div>
-        )}        
+        ))}
       </div>
       <hr class="dark horizontal my-5" />
       <StoreDoubleColumn />
