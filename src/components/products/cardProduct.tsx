@@ -11,9 +11,10 @@ interface Props {
   thumb_alt: string;
   title: string;
   description: string;
-  price: number;    
+  price: number;
   position: string;
   categories: Category[];
+  onPress: any;
 }
 
 
@@ -25,11 +26,12 @@ export default function CardProduct({
   description,
   price,    
   position,
-  categories
+  categories,
+  onPress
 }: Props) {
 
   const classList = "card-body " + "text-" + position;
-  console.log(title)
+  
 
   return (
     <>
@@ -88,17 +90,18 @@ export default function CardProduct({
                 ${price.toLocaleString()}
               </h4>
             )}
-         
-         <div style={{marginTop:'16px'}}>
-            <CartQuickview
-              colors={[]}
-              thumb_src={thumb_src}
-              title={title}              
-              rating={4}
-              reviews={2}
-            />
-            </div>
 
+            <div style={{ marginTop: "16px" }}>
+              <button
+                onClick={onPress}
+                type="button"
+                className="btn btn-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal2"
+              >
+                Add to Cart
+              </button>
+            </div>
           </div>
         </a>
       </div>

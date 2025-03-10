@@ -28,6 +28,7 @@ export default function CartQuickview({
     <button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal2">
       Add to Cart
     </button>
+    
     <div className="modal fade" id="exampleModal2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div className="modal-dialog modal-dialog-centered modal-xl" role="document">
         <div className="modal-content">
@@ -107,6 +108,7 @@ export default function CartQuickview({
         </div>
       </div>
     </div>
+    
     </>
   );
 };
